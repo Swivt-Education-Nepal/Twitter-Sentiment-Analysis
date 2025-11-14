@@ -1,0 +1,69 @@
+├── LICENSE
+├── Makefile
+├── README.md
+├── app
+│   ├── __init__.py
+│   ├── core
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── model_loader.py
+│   │   └── twitter_client.py
+│   ├── main.py
+│   ├── models.py
+│   ├── routes
+│   │   ├── __init__.py
+│   │   ├── analysis.py
+│   │   ├── health.py
+│   │   └── sentiment.py
+│   ├── static
+│   │   ├── script.js
+│   │   └── style.css
+│   └── templates
+│       ├── dashboard.html
+│       └── index.html
+├── data
+│   ├── external
+│   ├── interim
+│   ├── processed
+│   └── raw
+├── docs
+│   ├── README.md
+│   ├── docs
+│   │   ├── getting-started.md
+│   │   └── index.md
+│   └── mkdocs.yml
+├── environment.yml
+├── models
+│   ├── distilbert_sentiment_2class_final.pt
+│   └── distilbert_sentiment_5class_final.pt
+├── notebooks
+├── project_structure.txt
+├── pyproject.toml
+├── python_structure.py
+├── quick_test.py
+├── references
+├── reports
+│   ├── figures
+│   │   ├── accuracy_curves.png
+│   │   ├── combined_metrics.png
+│   │   ├── epoch_times.png
+│   │   └── loss_curves.png
+│   └── train_val_metrics_5class.csv
+├── requirements_api.txt
+├── run_api.py
+├── tests
+│   └── test_data.py
+└── twitter_sentiment_analysis
+    ├── __init__.py
+    ├── config.py
+    ├── configs
+    │   ├── __init__.py
+    │   ├── exceptions.py
+    │   └── logger.py
+    ├── dataset.py
+    ├── features.py
+    ├── modeling
+    │   ├── __init__.py
+    │   ├── predict.py
+    │   └── train.py
+    └── plots.py

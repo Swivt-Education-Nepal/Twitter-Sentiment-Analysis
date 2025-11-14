@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Sentiment Analysis</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fab fa-twitter"></i>
+                <h1>Twitter Sentiment Analyzer</h1>
+            </div>
+            <nav>
+                <a href="/" class="active">Home</a>
+                <a href="/dashboard">Dashboard</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Analyze Twitter Sentiment in Real-Time</h2>
+            <p>Get insights from the latest tweets using advanced AI sentiment analysis</p>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Analysis Type Selection -->
+            <div class="card">
+                <h3>Choose Analysis Type</h3>
+                <div class="button-group">
+                    <button class="btn-tab active" onclick="showTab('user')">
+                        <i class="fas fa-user"></i> Analyze User
+                    </button>
+                    <button class="btn-tab" onclick="showTab('hashtag')">
+                        <i class="fas fa-hashtag"></i> Analyze Hashtag
+                    </button>
+                    <button class="btn-tab" onclick="showTab('text')">
+                        <i class="fas fa-comment"></i> Analyze Text
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Analysis Tab -->
+            <div id="user-tab" class="tab-content active">
+                <div class="card">
+                    <h3><i class="fas fa-user-circle"></i> Analyze User's Recent Tweets</h3>
+                    <form id="user-form">
+                        <div class="form-group">
+                            <label for="username">Twitter Username</label>
+                            <input type="text" id="username" placeholder="Enter username (without @)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-count">Number of Tweets</label>
+                            <input type="number" id="user-count" min="1" max="10" value="5">
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-search"></i> Analyze
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Hashtag Analysis Tab -->
+            <div id="hashtag-tab" class="tab-content">
+                <div class="card">
+                    <h3><i class="fas fa-hashtag"></i> Analyze Hashtag Tweets</h3>
+                    <form id="hashtag-form">
+                        <div class="form-group">
+                            <label for="hashtag">Hashtag</label>
+                            <input type="text" id="hashtag" placeholder="Enter hashtag (with or without #)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hashtag-count">Number of Tweets</label>
+                            <input type="number" id="hashtag-count" min="1" max="10" value="5">
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-search"></i> Analyze
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Text Analysis Tab -->
+            <div id="text-tab" class="tab-content">
+                <div class="card">
+                    <h3><i class="fas fa-comment-dots"></i> Analyze Custom Text</h3>
+                    <form id="text-form">
+                        <div class="form-group">
+                            <label for="custom-text">Your Text</label>
+                            <textarea id="custom-text" rows="4" placeholder="Enter text to analyze..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-brain"></i> Analyze Sentiment
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing tweets...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" style="display: none;">
+                <!-- Summary Card -->
+                <div class="card">
+                    <h3><i class="fas fa-chart-pie"></i> Analysis Summary</h3>
+                    <div id="summary-content"></div>
+                </div>
+
+                <!-- Tweets List -->
+                <div class="card">
+                    <h3><i class="fas fa-list"></i> Analyzed Tweets</h3>
+                    <div id="tweets-list"></div>
+                </div>
+            </div>
+
+            <!-- Text Result -->
+            <div id="text-result" style="display: none;">
+                <div class="card">
+                    <h3><i class="fas fa-chart-bar"></i> Sentiment Analysis Result</h3>
+                    <div id="text-result-content"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Twitter Sentiment Analysis. Powered by DistilBERT</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

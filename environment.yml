@@ -1,22 +1,23 @@
-name: twitter_sentiment_analysis
+name: twitter-sentiment
 channels:
+  - pytorch
   - conda-forge
+  - defaults
 dependencies:
-  - python=3.10
+  - python=3.8
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cudatoolkit=11.3
   - pip
-  - typer
-  - loguru
-  - tqdm
-  - ipython
-  - jupyterlab
-  - matplotlib
-  - notebook
-  - numpy
   - pandas
+  - numpy
   - scikit-learn
-  - ruff
-  - pytest
+  - tqdm
+  - jupyter
   - pip:
-    - python-dotenv
-    - mkdocs
-    - -e .
+    - transformers
+    - contractions
+    - emoji
+    - torch
+    - pymongo

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis 2025</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>Sentiment Analysis 2025</h1>
+            <p>Advanced AI-powered sentiment analysis with 5-class classification</p>
+        </div>
+
+        <div class="analysis-grid">
+            <!-- Text Analysis Section -->
+            <div class="glass-container input-section">
+                <h2>📝 Text Analysis</h2>
+                <div class="input-group">
+                    <label for="textInput">Enter Text</label>
+                    <textarea 
+                        id="textInput" 
+                        class="glass-textarea" 
+                        placeholder="Type your text here..."
+                    ></textarea>
+                </div>
+                <button id="analyzeBtn" class="glass-button">
+                    Analyze Sentiment
+                </button>
+                <div id="analyzingLoading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing sentiment...</p>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="glass-container results-section" id="resultsSection" style="display: none; opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
+                <h2>🎯 Analysis Results</h2>
+                <div class="sentiment-display">
+                    <div id="sentimentIcon" class="sentiment-icon">🤔</div>
+                    <div id="sentimentDisplay" class="sentiment-text">Neutral</div>
+                    <div class="confidence-bar">
+                        <div id="confidenceBar" class="confidence-fill" style="width: 0%"></div>
+                    </div>
+                    <div id="confidenceText" class="confidence-text">0% confidence</div>
+                </div>
+                <div class="breakdown-grid" id="breakdownGrid">
+                    <!-- Breakdown items will be populated here -->
+                </div>
+            </div>
+
+            <!-- Batch Analysis Section -->
+            <div class="glass-container input-section">
+                <h2>📊 Batch Analysis</h2>
+                <div class="input-group">
+                    <label for="batchInput">Multiple Texts (one per line)</label>
+                    <textarea 
+                        id="batchInput" 
+                        class="glass-textarea" 
+                        placeholder="Enter multiple texts..."
+                        rows="6"
+                    ></textarea>
+                </div>
+                <button id="batchAnalyzeBtn" class="glass-button">
+                    Analyze Batch
+                </button>
+                <div id="batchLoading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing batch...</p>
+                </div>
+                <div id="batchResults" class="tweets-grid" style="display: none;"></div>
+            </div>
+
+            <!-- Twitter Analysis Section -->
+            <div class="glass-container input-section">
+                <h2>🐦 Twitter Analysis</h2>
+                <div class="input-group">
+                    <label for="twitterQuery">Search Query</label>
+                    <input 
+                        type="text" 
+                        id="twitterQuery" 
+                        class="glass-input" 
+                        placeholder="Enter hashtag, username, or keyword"
+                    >
+                </div>
+                <div class="input-group">
+                    <label for="searchType">Search Type</label>
+                    <select id="searchType" class="glass-select">
+                        <option value="text">Keyword</option>
+                        <option value="hashtag">Hashtag</option>
+                        <option value="username">Username</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="maxResults">Max Results</label>
+                    <select id="maxResults" class="glass-select">
+                        <option value="10">10 Tweets</option>
+                        <option value="25" selected>25 Tweets</option>
+                        <option value="50">50 Tweets</option>
+                        <option value="100">100 Tweets</option>
+                    </select>
+                </div>
+                <button id="twitterAnalyzeBtn" class="glass-button">
+                    Analyze Twitter
+                </button>
+                <div id="twitterLoading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Fetching and analyzing tweets...</p>
+                </div>
+                
+                <div id="twitterResultsSection" style="margin-top: 2rem;">
+                    <h3>Sentiment Distribution</h3>
+                    <div class="breakdown-grid" id="sentimentDistribution">
+                        <!-- Distribution will be populated here -->
+                    </div>
+                    <h3 style="margin-top: 2rem;">Tweet Results</h3>
+                    <div id="twitterResults" class="tweets-grid" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
