@@ -40,10 +40,5 @@ async def root(request: Request):
     """Serve the main page"""
     return templates.TemplateResponse("index.html", {"request": request})
 
-@app.get("/dashboard", response_class=HTMLResponse)
-async def dashboard(request: Request):
-    """Serve the dashboard page"""
-    return templates.TemplateResponse("dashboard.html", {"request": request})
-
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)

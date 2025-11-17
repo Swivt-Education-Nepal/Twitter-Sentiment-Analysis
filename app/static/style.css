@@ -41,7 +41,7 @@ body {
     border-radius: 12px;
     box-shadow: var(--shadow);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 30px;
 }
@@ -60,25 +60,6 @@ body {
 .logo h1 {
     font-size: 1.5rem;
     color: var(--secondary);
-}
-
-nav {
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--text-light);
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: all 0.3s;
-}
-
-nav a:hover, nav a.active {
-    background: var(--primary);
-    color: white;
 }
 
 /* Hero Section */
@@ -352,9 +333,7 @@ nav a:hover, nav a.active {
 /* Responsive */
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
         text-align: center;
-        gap: 15px;
     }
     
     .hero h2 {
